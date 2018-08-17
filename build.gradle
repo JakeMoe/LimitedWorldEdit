@@ -1,0 +1,42 @@
+/*
+ * Copyright 17 August 2018 John Moe
+ *
+ * This file (build.gradle) is part of LimitedWorldEdit.
+ *
+ * LimitedWorldEdit is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * LimitedWorldEdit is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with LimitedWorldEdit.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+plugins {
+  id 'java'
+  id 'org.spongepowered.plugin' version '0.8.1'
+}
+
+group 'com.gmail.jakesaddress.limitedworldedit'
+version '0.1'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+  mavenCentral()
+  maven {
+    url 'https://maven.sk89q.com/repo'
+  }
+}
+
+dependencies {
+  compile 'org.spongepowered:spongeapi:7.1.0-SNAPSHOT'
+  compile 'com.sk89q.worldedit:worldedit-core:6.1.4-SNAPSHOT'
+  compile 'com.sk89q.worldedit:worldedit-sponge:6.1.7-SNAPSHOT'
+}
