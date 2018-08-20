@@ -23,11 +23,11 @@ import com.sk89q.worldedit.blocks.BaseBlock;
 import java.util.HashSet;
 import org.spongepowered.api.entity.living.player.Player;
 
-public class WorldEditManager {
+class WorldEditManager {
 
-  public static final BaseBlock AIR = new BaseBlock(0, 0);
+  static final BaseBlock AIR = new BaseBlock(0, 0);
 
-  public static boolean maskContains(HashSet<ClaimRegion> mask, int x, int y, int z) {
+  static boolean maskContains(HashSet<ClaimRegion> mask, int x, int y, int z) {
     for (ClaimRegion region : mask) {
       if (region.isIn(x, y, z)) {
         return true;
@@ -36,7 +36,7 @@ public class WorldEditManager {
     return false;
   }
 
-  public static boolean maskContains(HashSet<ClaimRegion> mask, int x, int z) {
+  static boolean maskContains(HashSet<ClaimRegion> mask, int x, int z) {
     for (ClaimRegion region : mask) {
       if (region.isIn(x, z)) {
         return true;
@@ -45,7 +45,7 @@ public class WorldEditManager {
     return false;
   }
 
-  public static HashSet<ClaimRegion> getMask(Player player) {
+  static HashSet<ClaimRegion> getMask(Player player) {
     HashSet<ClaimRegion> regions = new HashSet<>();
     regions.addAll(Main.getClaimApi().getRegions(player));
     return regions;

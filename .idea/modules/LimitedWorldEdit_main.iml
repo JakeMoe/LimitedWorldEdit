@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id="LimitedWorldEdit:main" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="com.gmail.jakesaddress.limitedworldedit" external.system.module.type="sourceSet" external.system.module.version="0.2" type="JAVA_MODULE" version="4">
+<module external.linked.project.id="LimitedWorldEdit:main" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="com.gmail.jakesaddress.limitedworldedit" external.system.module.type="sourceSet" external.system.module.version="0.3" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../src/main">
@@ -8,48 +8,40 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library name="Gradle: com.sk89q.worldedit:worldedit-sponge:7.0.0-SNAPSHOT">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../Could not find com.sk89q.worldedit:worldedit-sponge:7.0.0-SNAPSHOT.&#10;Searched in the following locations:&#10;  - file:/home/jmoe/.m2/repository/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/maven-metadata.xml&#10;  - file:/home/jmoe/.m2/repository/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/worldedit-sponge-7.0.0-SNAPSHOT.pom&#10;  - file:/home/jmoe/.m2/repository/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/worldedit-sponge-7.0.0-SNAPSHOT.jar&#10;  - https:/repo.maven.apache.org/maven2/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/maven-metadata.xml&#10;  - https:/repo.maven.apache.org/maven2/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/worldedit-sponge-7.0.0-SNAPSHOT.pom&#10;  - https:/repo.maven.apache.org/maven2/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/worldedit-sponge-7.0.0-SNAPSHOT.jar&#10;  - https:/repo.spongepowered.org/maven/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/maven-metadata.xml&#10;  - https:/repo.spongepowered.org/maven/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/worldedit-sponge-7.0.0-SNAPSHOT.pom&#10;  - https:/repo.spongepowered.org/maven/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/worldedit-sponge-7.0.0-SNAPSHOT.jar&#10;  - https:/repo.maven.apache.org/maven2/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/maven-metadata.xml&#10;  - https:/repo.maven.apache.org/maven2/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/worldedit-sponge-7.0.0-SNAPSHOT.pom&#10;  - https:/repo.maven.apache.org/maven2/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/worldedit-sponge-7.0.0-SNAPSHOT.jar&#10;  - https:/jcenter.bintray.com/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/maven-metadata.xml&#10;  - https:/jcenter.bintray.com/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/worldedit-sponge-7.0.0-SNAPSHOT.pom&#10;  - https:/jcenter.bintray.com/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/worldedit-sponge-7.0.0-SNAPSHOT.jar&#10;  - https:/repo.spongepowered.org/maven/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/maven-metadata.xml&#10;  - https:/repo.spongepowered.org/maven/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/worldedit-sponge-7.0.0-SNAPSHOT.pom&#10;  - https:/repo.spongepowered.org/maven/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/worldedit-sponge-7.0.0-SNAPSHOT.jar&#10;  - http:/files.minecraftforge.net/maven/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/maven-metadata.xml&#10;  - http:/files.minecraftforge.net/maven/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/worldedit-sponge-7.0.0-SNAPSHOT.pom&#10;  - http:/files.minecraftforge.net/maven/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/worldedit-sponge-7.0.0-SNAPSHOT.jar&#10;  - https:/maven.sk89q.com/repo/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/maven-metadata.xml&#10;  - https:/maven.sk89q.com/repo/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/worldedit-sponge-7.0.0-SNAPSHOT.pom&#10;  - https:/maven.sk89q.com/repo/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/worldedit-sponge-7.0.0-SNAPSHOT.jar&#10;  - http:/repo.bstats.org/content/repositories/releases/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/maven-metadata.xml&#10;  - http:/repo.bstats.org/content/repositories/releases/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/worldedit-sponge-7.0.0-SNAPSHOT.pom&#10;  - http:/repo.bstats.org/content/repositories/releases/com/sk89q/worldedit/worldedit-sponge/7.0.0-SNAPSHOT/worldedit-sponge-7.0.0-SNAPSHOT.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
+    <orderEntry type="library" name="Gradle: com.sk89q.worldedit:worldedit-core:6.1.4-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Gradle: com.sk89q.worldedit:worldedit-sponge:6.1.7-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Gradle: me.ryanhamshire:griefprevention:api:1.12.2-4.3.0.646" level="project" />
+    <orderEntry type="library" name="Gradle: org.spongepowered:spongeapi:7.1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Gradle: de.schlichtherle:truezip:6.8.3" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.inject:guice:4.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.spongepowered:plugin-meta:0.4.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.spongepowered:configurate-hocon:3.6" level="project" />
+    <orderEntry type="library" name="Gradle: org.spongepowered:configurate-gson:3.6" level="project" />
     <orderEntry type="library" name="Gradle: org.spongepowered:configurate-yaml:3.6" level="project" />
-    <orderEntry type="library" name="Gradle: com.github.ben-manes.caffeine:caffeine:2.5.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.spongepowered:configurate-core:3.6" level="project" />
     <orderEntry type="library" name="Gradle: com.google.guava:guava:21.0" level="project" />
+    <orderEntry type="library" name="Gradle: rhino:js:1.7R2" level="project" />
     <orderEntry type="library" name="Gradle: org.yaml:snakeyaml:1.18" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.findbugs:jsr305:3.0.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.thoughtworks.paranamer:paranamer:2.6" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.8.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.sk89q.lib:jlibnoise:1.0.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.sk89q:jchronic:0.2.4a" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp:3.9.1" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okio:okio:1.13.0" level="project" />
     <orderEntry type="library" name="Gradle: org.bstats:bstats-sponge:1.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.spongepowered:plugin-meta:0.4.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Gradle: com.google.errorprone:error_prone_annotations:2.0.15" level="project" />
-    <orderEntry type="library" name="Gradle: org.spongepowered:configurate-gson:3.6" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:3.5" level="project" />
     <orderEntry type="library" name="Gradle: com.github.ben-manes.caffeine:guava:2.5.4" level="project" />
-    <orderEntry type="library" name="Gradle: org.spongepowered:configurate-core:3.6" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.ben-manes.caffeine:caffeine:2.5.4" level="project" />
     <orderEntry type="library" name="Gradle: com.flowpowered:flow-math:1.0.3" level="project" />
     <orderEntry type="library" name="Gradle: com.flowpowered:flow-noise:1.0.1-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Gradle: org.ow2.asm:asm:5.2" level="project" />
+    <orderEntry type="library" name="Gradle: junit:junit:4.8.1" level="project" />
     <orderEntry type="library" name="Gradle: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Gradle: aopalliance:aopalliance:1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.typesafe:config:1.3.1" level="project" />
-    <orderEntry type="library" name="Gradle: me.ryanhamshire:griefprevention:api:1.12.2-4.3.0.646" level="project" />
-    <orderEntry type="library" name="Gradle: org.spongepowered:spongeapi:7.1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.inject:guice:4.1.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Gradle: org.checkerframework:checker-qual:2.4.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.sk89q.worldedit:worldedit-core:6.1.4-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:3.5" level="project" />
-    <orderEntry type="library" name="Gradle: de.schlichtherle:truezip:6.8.3" level="project" />
-    <orderEntry type="library" name="Gradle: rhino:js:1.7R2" level="project" />
-    <orderEntry type="library" name="Gradle: com.thoughtworks.paranamer:paranamer:2.6" level="project" />
-    <orderEntry type="library" name="Gradle: com.sk89q.lib:jlibnoise:1.0.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.spongepowered:configurate-hocon:3.6" level="project" />
-    <orderEntry type="library" name="Gradle: junit:junit:4.8.1" level="project" />
-    <orderEntry type="library" name="Gradle: com.sk89q:jchronic:0.2.4a" level="project" />
   </component>
 </module>

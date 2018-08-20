@@ -40,46 +40,49 @@ import org.spongepowered.api.plugin.Plugin;
   },
   dependencies = {
     @Dependency(id = "griefprevention"),
-    @Dependency(id = "worldedit-core"),
-    @Dependency(id = "worldedit-sponge")
+    @Dependency(id = "worldedit")
   },
   description = "LimitedWorldEdit for Sponge",
   id = "limitedworldedit",
   name = "LimitedWorldEdit",
-  version = "0.2"
+  version = "0.3"
 )
 public class Main {
 
   private static final String project = "LimitedWorldEdit";
-  private static final String version = "0.2";
+  private static final String version = "0.3";
 
+  private static Main instance;
   private static GriefPreventionApi griefPreventionApi;
   private static ClaimApi claimApi;
 
   @Inject
-  private static Logger logger;
+  private Logger logger;
 
   @Listener
   public void onGameConstruction(GameConstructionEvent event) {
-    logInfo(project + " " + version + " starting");
+    instance = this;
+    logger.info(project + " " + version + " starting");
   }
 
   @Listener
   public void onGamePostInitialization(GamePostInitializationEvent event) {
 
+    logger.info("Checking for dependent plugins");
+
     if (!Sponge.getPluginManager().getPlugin("griefprevention").isPresent()) {
-      logInfo("GtriefPrevention not found, this plugin requires GriefPrevention");
+      logger.info("GriefPrevention not found, this plugin requires GriefPrevention");
     } else {
+      logger.info("Found GriefPrevention");
       griefPreventionApi = GriefPrevention.getApi();
       claimApi = new GriefPreventionClaimApi();
     }
 
-    if (!Sponge.getPluginManager().getPlugin("worldedit-core").isPresent()) {
-      logInfo("WorldEdit-Core not found, this plugin required WorldEdit-Core");
-    }
 
-    if (!Sponge.getPluginManager().getPlugin("worldedit-sponge").isPresent()) {
-      logInfo("WorldEdit-Sponge not found, this plugin requires WorldEdit-Sponge");
+    if (!Sponge.getPluginManager().getPlugin("worldedit").isPresent()) {
+      logger.info("WorldEdit not found, this plugin required WorldEdit");
+    } else {
+      logger.info("Found WorldEdit");
     }
 
     WorldEdit.getInstance().getEventBus().register(new WorldEditListener());
@@ -88,11 +91,7 @@ public class Main {
 
   @Listener
   public void onGameStoppingEvent(GameStoppingEvent event) {
-    logInfo(project + " " + version + " stopping");
-  }
-
-  static void logInfo(String message) {
-    logger.info("[" + project + "] " + message);
+    logger.info(project + " " + version + " stopping");
   }
 
   static ClaimApi getClaimApi() {
@@ -103,7 +102,11 @@ public class Main {
     return griefPreventionApi;
   }
 
-  static Logger getLogger() {
+  static Main getInstance() {
+    return instance;
+  }
+
+  Logger getLogger() {
     return logger;
   }
 

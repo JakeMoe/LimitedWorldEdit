@@ -27,18 +27,23 @@ import org.spongepowered.api.entity.living.player.Player;
 
 public class WorldEditListener {
 
- public  void onEditSession(EditSessionEvent event) {
+  public  void onEditSession(EditSessionEvent event) {
+
+    Main.getInstance().getLogger().info("Checking edit perms");
 
     Actor actor = event.getActor();
     if (actor == null || !actor.isPlayer()) {
+      Main.getInstance().getLogger().info("Failed player check, skipping");
       return;
     }
 
     Player player = Sponge.getServer().getPlayer(actor.getUniqueId()).get();
     if (player.hasPermission("LimitedWorldEdit.bypass")) {
+      Main.getInstance().getLogger().info("Player has LimitedWorldEdit.bypass permission node");
       return;
     }
 
+    Main.getInstance().getLogger().info("Applying limits");
     HashSet<ClaimRegion> mask = WorldEditManager.getMask(player);
     event.setExtent(new WorldEditExtent(mask, event.getExtent()));
 
