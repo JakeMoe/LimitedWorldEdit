@@ -1,7 +1,7 @@
 /*
  * Copyright 17 August 2018 John Moe
  *
- * This file (EventListeners.java) is part of LimitedWorldEdit.
+ * This file (WorldEditListener.java) is part of LimitedWorldEdit.
  *
  * LimitedWorldEdit is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,12 +24,10 @@ import com.sk89q.worldedit.extension.platform.Actor;
 import java.util.HashSet;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.entity.living.player.Player;
-import org.spongepowered.api.event.Listener;
 
-public class EventListeners {
+public class WorldEditListener {
 
-  @Listener
-  void onEditSession(EditSessionEvent event) {
+ public  void onEditSession(EditSessionEvent event) {
 
     Actor actor = event.getActor();
     if (actor == null || !actor.isPlayer()) {
@@ -41,8 +39,8 @@ public class EventListeners {
       return;
     }
 
-    HashSet<RegionWrapper> mask = WEManager.getMask(player);
-    event.setExtent(new WEExtent(mask, event.getExtent()));
+    HashSet<ClaimRegion> mask = WorldEditManager.getMask(player);
+    event.setExtent(new WorldEditExtent(mask, event.getExtent()));
 
   }
 

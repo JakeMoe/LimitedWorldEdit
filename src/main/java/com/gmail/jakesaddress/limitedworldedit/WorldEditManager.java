@@ -1,7 +1,7 @@
 /*
  * Copyright 17 August 2018 John Moe
  *
- * This file (WEManager.java) is part of LimitedWorldEdit.
+ * This file (WorldEditManager.java) is part of LimitedWorldEdit.
  *
  * LimitedWorldEdit is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,17 +19,16 @@
 
 package com.gmail.jakesaddress.limitedworldedit;
 
-import com.gmail.jakesaddress.limitedworldedit.hooks.API;
 import com.sk89q.worldedit.blocks.BaseBlock;
 import java.util.HashSet;
 import org.spongepowered.api.entity.living.player.Player;
 
-public class WEManager {
+public class WorldEditManager {
 
   public static final BaseBlock AIR = new BaseBlock(0, 0);
 
-  public static boolean maskContains(HashSet<RegionWrapper> mask, int x, int y, int z) {
-    for (RegionWrapper region : mask) {
+  public static boolean maskContains(HashSet<ClaimRegion> mask, int x, int y, int z) {
+    for (ClaimRegion region : mask) {
       if (region.isIn(x, y, z)) {
         return true;
       }
@@ -37,8 +36,8 @@ public class WEManager {
     return false;
   }
 
-  public static boolean maskContains(HashSet<RegionWrapper> mask, int x, int z) {
-    for (RegionWrapper region : mask) {
+  public static boolean maskContains(HashSet<ClaimRegion> mask, int x, int z) {
+    for (ClaimRegion region : mask) {
       if (region.isIn(x, z)) {
         return true;
       }
@@ -46,9 +45,9 @@ public class WEManager {
     return false;
   }
 
-  public static HashSet<RegionWrapper> getMask(Player player) {
-    HashSet<RegionWrapper> regions = new HashSet<>();
-    regions.addAll(Main.getApi().getRegions(player));
+  public static HashSet<ClaimRegion> getMask(Player player) {
+    HashSet<ClaimRegion> regions = new HashSet<>();
+    regions.addAll(Main.getClaimApi().getRegions(player));
     return regions;
   }
 

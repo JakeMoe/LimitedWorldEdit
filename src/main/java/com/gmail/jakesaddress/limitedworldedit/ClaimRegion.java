@@ -1,7 +1,7 @@
 /*
  * Copyright 17 August 2018 John Moe
  *
- * This file (RegionWrapper.java) is part of LimitedWorldEdit.
+ * This file (ClaimRegion.java) is part of LimitedWorldEdit.
  *
  * LimitedWorldEdit is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,15 +19,15 @@
 
 package com.gmail.jakesaddress.limitedworldedit;
 
-public class RegionWrapper {
-  public final int minX;
-  public final int maxX;
-  public final int minY;
-  public final int maxY;
-  public final int minZ;
-  public final int maxZ;
+public class ClaimRegion {
+  private final int minX;
+  private final int maxX;
+  private final int minY;
+  private final int maxY;
+  private final int minZ;
+  private final int maxZ;
 
-  public RegionWrapper(int minX, int maxX, int minZ, int maxZ) {
+  public ClaimRegion(int minX, int maxX, int minZ, int maxZ) {
     this.maxX = maxX;
     this.minX = minX;
     this.maxZ = maxZ;
@@ -36,7 +36,7 @@ public class RegionWrapper {
     this.maxY = 256;
   }
 
-  public RegionWrapper(int minX, int maxX, int minY, int maxY, int minZ, int maxZ) {
+  public ClaimRegion(int minX, int maxX, int minY, int maxY, int minZ, int maxZ) {
     this.maxX = maxX;
     this.minX = minX;
     this.maxZ = maxZ;
@@ -45,11 +45,11 @@ public class RegionWrapper {
     this.maxY = maxY;
   }
 
-  public boolean isIn(int x, int y, int z) {
+  boolean isIn(int x, int y, int z) {
     return x >= this.minX && x <= this.maxX && z >= this.minZ && z <= this.maxZ && y >= this.minY && y <= this.maxY;
   }
 
-  public boolean isIn(int x, int z) {
+  boolean isIn(int x, int z) {
     return x >= this.minX && x <= this.maxX && z >= this.minZ && z <= this.maxZ;
   }
 

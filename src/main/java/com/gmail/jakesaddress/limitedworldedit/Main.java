@@ -19,57 +19,91 @@
 
 package com.gmail.jakesaddress.limitedworldedit;
 
-import com.gmail.jakesaddress.limitedworldedit.hooks.API;
+import com.gmail.jakesaddress.limitedworldedit.claim.ClaimApi;
+import com.gmail.jakesaddress.limitedworldedit.claim.GriefPreventionClaimApi;
+import com.sk89q.worldedit.WorldEdit;
 import javax.inject.Inject;
+import me.ryanhamshire.griefprevention.GriefPrevention;
+import me.ryanhamshire.griefprevention.api.GriefPreventionApi;
 import org.slf4j.Logger;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.event.Listener;
 import org.spongepowered.api.event.game.state.GameConstructionEvent;
-import org.spongepowered.api.event.game.state.GameInitializationEvent;
-import org.spongepowered.api.event.game.state.GamePreInitializationEvent;
+import org.spongepowered.api.event.game.state.GamePostInitializationEvent;
 import org.spongepowered.api.event.game.state.GameStoppingEvent;
+import org.spongepowered.api.plugin.Dependency;
 import org.spongepowered.api.plugin.Plugin;
 
-@Plugin(id = "limitedworldedit", name = "LimitedWorldEdit", version = "0.1", description = "LimitedWorldEdit for Sponge")
+@Plugin(authors = {
+    "Cluracan",
+    "James137137"
+  },
+  dependencies = {
+    @Dependency(id = "griefprevention"),
+    @Dependency(id = "worldedit-core"),
+    @Dependency(id = "worldedit-sponge")
+  },
+  description = "LimitedWorldEdit for Sponge",
+  id = "limitedworldedit",
+  name = "LimitedWorldEdit",
+  version = "0.2"
+)
 public class Main {
 
+  private static final String project = "LimitedWorldEdit";
+  private static final String version = "0.2";
+
+  private static GriefPreventionApi griefPreventionApi;
+  private static ClaimApi claimApi;
+
   @Inject
-  private Logger logger;
-
-  private static API api;
-
-  private static Main instance;
+  private static Logger logger;
 
   @Listener
   public void onGameConstruction(GameConstructionEvent event) {
-    instance = this;
+    logInfo(project + " " + version + " starting");
   }
 
   @Listener
-  public void onGamePreInitialization(GamePreInitializationEvent event) {
-//    configuration = new Configuration(getConfigLoader());
-//    getConfiguration().load();
-  }
+  public void onGamePostInitialization(GamePostInitializationEvent event) {
 
-  @Listener
-  public void onGameInitialization(GameInitializationEvent event) {
-    Sponge.getEventManager().registerListeners(this, new EventListeners());
+    if (!Sponge.getPluginManager().getPlugin("griefprevention").isPresent()) {
+      logInfo("GtriefPrevention not found, this plugin requires GriefPrevention");
+    } else {
+      griefPreventionApi = GriefPrevention.getApi();
+      claimApi = new GriefPreventionClaimApi();
+    }
+
+    if (!Sponge.getPluginManager().getPlugin("worldedit-core").isPresent()) {
+      logInfo("WorldEdit-Core not found, this plugin required WorldEdit-Core");
+    }
+
+    if (!Sponge.getPluginManager().getPlugin("worldedit-sponge").isPresent()) {
+      logInfo("WorldEdit-Sponge not found, this plugin requires WorldEdit-Sponge");
+    }
+
+    WorldEdit.getInstance().getEventBus().register(new WorldEditListener());
+
   }
 
   @Listener
   public void onGameStoppingEvent(GameStoppingEvent event) {
-//    getConfiguration().save();
+    logInfo(project + " " + version + " stopping");
   }
 
-  static API getApi() {
-    return api;
+  static void logInfo(String message) {
+    logger.info("[" + project + "] " + message);
   }
 
-  Main getInstance() {
-    return this;
+  static ClaimApi getClaimApi() {
+    return claimApi;
   }
 
-  Logger getLogger() {
+  public static GriefPreventionApi getGriefPreventionApi() {
+    return griefPreventionApi;
+  }
+
+  static Logger getLogger() {
     return logger;
   }
 
