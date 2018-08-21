@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id="LimitedWorldEdit:test" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="com.gmail.jakesaddress.limitedworldedit" external.system.module.type="sourceSet" external.system.module.version="0.3" type="JAVA_MODULE" version="4">
+<module external.linked.project.id="LimitedWorldEdit:test" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="com.gmail.jakesaddress.limitedworldedit" external.system.module.type="sourceSet" external.system.module.version="0.4" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../src/test">
@@ -16,10 +16,10 @@
     <orderEntry type="library" name="Gradle: de.schlichtherle:truezip:6.8.3" level="project" />
     <orderEntry type="library" name="Gradle: com.google.inject:guice:4.1.0" level="project" />
     <orderEntry type="library" name="Gradle: org.spongepowered:plugin-meta:0.4.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.spongepowered:configurate-hocon:3.6" level="project" />
-    <orderEntry type="library" name="Gradle: org.spongepowered:configurate-gson:3.6" level="project" />
-    <orderEntry type="library" name="Gradle: org.spongepowered:configurate-yaml:3.6" level="project" />
-    <orderEntry type="library" name="Gradle: org.spongepowered:configurate-core:3.6" level="project" />
+    <orderEntry type="library" name="Gradle: org.spongepowered:configurate-hocon:3.5" level="project" />
+    <orderEntry type="library" name="Gradle: org.spongepowered:configurate-gson:3.5" level="project" />
+    <orderEntry type="library" name="Gradle: org.spongepowered:configurate-yaml:3.5" level="project" />
+    <orderEntry type="library" name="Gradle: org.spongepowered:configurate-core:3.5" level="project" />
     <orderEntry type="library" name="Gradle: com.google.guava:guava:21.0" level="project" />
     <orderEntry type="library" name="Gradle: rhino:js:1.7R2" level="project" />
     <orderEntry type="library" name="Gradle: org.yaml:snakeyaml:1.18" level="project" />

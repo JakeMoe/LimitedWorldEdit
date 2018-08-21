@@ -21,12 +21,14 @@ package com.gmail.jakesaddress.limitedworldedit;
 
 import com.sk89q.worldedit.event.extent.EditSessionEvent;
 import com.sk89q.worldedit.extension.platform.Actor;
+import com.sk89q.worldedit.util.eventbus.Subscribe;
 import java.util.HashSet;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.entity.living.player.Player;
 
 public class WorldEditListener {
 
+  @Subscribe
   public  void onEditSession(EditSessionEvent event) {
 
     Main.getInstance().getLogger().info("Checking edit perms");

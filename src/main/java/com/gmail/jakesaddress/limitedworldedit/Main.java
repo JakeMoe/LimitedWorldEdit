@@ -45,12 +45,12 @@ import org.spongepowered.api.plugin.Plugin;
   description = "LimitedWorldEdit for Sponge",
   id = "limitedworldedit",
   name = "LimitedWorldEdit",
-  version = "0.3"
+  version = "0.4"
 )
 public class Main {
 
   private static final String project = "LimitedWorldEdit";
-  private static final String version = "0.3";
+  private static final String version = "0.4";
 
   private static Main instance;
   private static GriefPreventionApi griefPreventionApi;
