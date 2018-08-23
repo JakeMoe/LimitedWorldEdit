@@ -28,25 +28,25 @@ public class ClaimRegion {
   private final int maxZ;
 
   public ClaimRegion(int minX, int maxX, int minZ, int maxZ) {
-    this.maxX = maxX;
     this.minX = minX;
-    this.maxZ = maxZ;
-    this.minZ = minZ;
+    this.maxX = maxX;
     this.minY = 0;
     this.maxY = 256;
+    this.minZ = minZ;
+    this.maxZ = maxZ;
   }
 
   public ClaimRegion(int minX, int maxX, int minY, int maxY, int minZ, int maxZ) {
-    this.maxX = maxX;
     this.minX = minX;
-    this.maxZ = maxZ;
-    this.minZ = minZ;
+    this.maxX = maxX;
     this.minY = minY;
     this.maxY = maxY;
+    this.minZ = minZ;
+    this.maxZ = maxZ;
   }
 
   boolean isIn(int x, int y, int z) {
-    return x >= this.minX && x <= this.maxX && z >= this.minZ && z <= this.maxZ && y >= this.minY && y <= this.maxY;
+    return x >= this.minX && x <= this.maxX && y >= this.minY && y <= this.maxY && z >= this.minZ && z <= this.maxZ;
   }
 
   boolean isIn(int x, int z) {
