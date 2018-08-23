@@ -2,7 +2,19 @@
 
 ## Description
 
-LimitedWorldEdit is a port of James137137's LimitedWorldEdit for Bukkit to Sponge.
+LimitedWorldEdit is a Minecraft Sponge plugin that allows a player to use WorldEdit within their own claim(s), and will prevent it from applying changes outside the claiimed area.
+
+LimitedWorldEdit is a port of [James137137's LimitedWorldEdit](https://github.com/James137137/LimitedWorldEdit) for Bukkit to Sponge, and was written for the [Lolnet](https://www.lolnet.co.nz) creative server.
+
+## Dependencies
+
+LimitedWorldEdit requires:
+* WorldEdit
+* GriefPrevention
+
+## Installation and configuration
+
+Simply copy the compiled jar file into your server's mods folder, and away you go. No configuration required.
 
 ## Copyright
 
@@ -21,3 +33,4 @@ LimitedWorldEdit is available under the terms of the GPL v3 license.
   * Added @Subscribe to WorldEdit event handler
 * v0.5 - 23 Aug 2018 - Jake Moe
   * Added additional logging to assist with debugging
+  * Tidied up this readme
