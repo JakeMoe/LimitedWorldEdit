@@ -47,6 +47,7 @@ public class WorldEditListener {
 
     Main.getInstance().getLogger().info("Applying limits");
     HashSet<ClaimRegion> mask = WorldEditManager.getMask(player);
+    Main.getInstance().getLogger().info("Found " + mask.size() + " player claim(s)");
     event.setExtent(new WorldEditExtent(mask, event.getExtent()));
 
   }

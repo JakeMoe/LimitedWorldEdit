@@ -46,9 +46,8 @@ class WorldEditManager {
   }
 
   static HashSet<ClaimRegion> getMask(Player player) {
-    HashSet<ClaimRegion> regions = new HashSet<>();
-    regions.addAll(Main.getClaimApi().getRegions(player));
-    return regions;
+    Main.getInstance().getLogger().info("In WorldEditManager.getMask");
+    return new HashSet<>(Main.getClaimApi().getRegions(player));
   }
 
 }

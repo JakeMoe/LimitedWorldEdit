@@ -83,9 +83,8 @@ public class Main {
       logger.info("WorldEdit not found, this plugin required WorldEdit");
     } else {
       logger.info("Found WorldEdit");
+      WorldEdit.getInstance().getEventBus().register(new WorldEditListener());
     }
-
-    WorldEdit.getInstance().getEventBus().register(new WorldEditListener());
 
   }
 
@@ -102,11 +101,11 @@ public class Main {
     return griefPreventionApi;
   }
 
-  static Main getInstance() {
+  public static Main getInstance() {
     return instance;
   }
 
-  Logger getLogger() {
+  public Logger getLogger() {
     return logger;
   }
 

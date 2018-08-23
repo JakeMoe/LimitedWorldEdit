@@ -19,3 +19,5 @@ LimitedWorldEdit is available under the terms of the GPL v3 license.
   * Compiles, loads, and detects GP and WE plugins. Does not seem to fire WE event.
 * v0.4 - 21 Aug 2018 - Jake Moe
   * Added @Subscribe to WorldEdit event handler
+* v0.5 - 23 Aug 2018 - Jake Moe
+  * Added additional logging to assist with debugging
