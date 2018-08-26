@@ -37,19 +37,25 @@ public class WorldEditExtent extends AbstractDelegateExtent {
 
   WorldEditExtent(HashSet<ClaimRegion> mask, Extent extent) {
     super(extent);
-    Main.getInstance().getLogger().info("In WorldEditExtent constructor");
+    if (Main.isDebug()) {
+      Main.getInstance().getLogger().info("In WorldEditExtent constructor");
+    }
     this.mask = mask;
   }
 
   @Override
   public boolean setBlock(Vector location, BaseBlock block) throws WorldEditException {
-    Main.getInstance().getLogger().info("In WorldEditExtent.setBlock");
+    if (Main.isDebug()) {
+      Main.getInstance().getLogger().info("In WorldEditExtent.setBlock");
+    }
     return WorldEditManager.maskContains(this.mask, location.getBlockX(), location.getBlockY(), location.getBlockZ()) && super.setBlock(location, block);
   }
 
   @Override
   public Entity createEntity(Location location, BaseEntity entity) {
-    Main.getInstance().getLogger().info("In WorldEditExtent.createEntity");
+    if (Main.isDebug()) {
+      Main.getInstance().getLogger().info("In WorldEditExtent.createEntity");
+    }
     if (WorldEditManager.maskContains(this.mask, location.getBlockX(), location.getBlockY(), location.getBlockZ())) {
       return super.createEntity(location, entity);
     }
@@ -58,13 +64,17 @@ public class WorldEditExtent extends AbstractDelegateExtent {
 
   @Override
   public boolean setBiome(Vector2D position, BaseBiome biome) {
-    Main.getInstance().getLogger().info("In WorldEditExtent.setBiome");
+    if (Main.isDebug()) {
+      Main.getInstance().getLogger().info("In WorldEditExtent.setBiome");
+    }
     return WorldEditManager.maskContains(this.mask, position.getBlockX(), position.getBlockZ()) && super.setBiome(position, biome);
   }
 
   @Override
   public BaseBlock getBlock(Vector location) {
-    Main.getInstance().getLogger().info("In WorldEditExtent.getBlock");
+    if (Main.isDebug()) {
+      Main.getInstance().getLogger().info("In WorldEditExtent.getBlock");
+    }
     if (WorldEditManager.maskContains(this.mask, location.getBlockX(), location.getBlockY(), location.getBlockZ())) {
       return super.getBlock(location);
     }

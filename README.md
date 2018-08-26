@@ -34,3 +34,7 @@ LimitedWorldEdit is available under the terms of the GPL v3 license.
 * v0.5 - 23 Aug 2018 - Jake Moe
   * Added additional logging to assist with debugging
   * Tidied up this readme
+* v0.6 - 27 Aug 2018 - Jake Moe
+  * Fixed minZ in GriefPreventionClaimApi
+  * Added more logging
+  * Added debug flag to Main class

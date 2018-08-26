@@ -31,23 +31,32 @@ public class WorldEditListener {
   @Subscribe
   public  void onEditSession(EditSessionEvent event) {
 
-    Main.getInstance().getLogger().info("Checking edit perms");
+    Main.getInstance().getLogger().info("Checking edit perms in " + event.getStage().name());
 
     Actor actor = event.getActor();
     if (actor == null || !actor.isPlayer()) {
-      Main.getInstance().getLogger().info("Failed player check, skipping");
+      if (Main.isDebug()) {
+        Main.getInstance().getLogger().info("Failed player check, skipping");
+      }
       return;
     }
 
     Player player = Sponge.getServer().getPlayer(actor.getUniqueId()).get();
     if (player.hasPermission("LimitedWorldEdit.bypass")) {
-      Main.getInstance().getLogger().info("Player has LimitedWorldEdit.bypass permission node");
+      if (Main.isDebug()) {
+        Main.getInstance().getLogger().info("Player has LimitedWorldEdit.bypass permission node");
+      }
       return;
     }
 
-    Main.getInstance().getLogger().info("Applying limits");
+    if (Main.isDebug()) {
+      Main.getInstance().getLogger().info("Applying limits");
+    }
     HashSet<ClaimRegion> mask = WorldEditManager.getMask(player);
-    Main.getInstance().getLogger().info("Found " + mask.size() + " player claim(s)");
+
+    if (Main.isDebug()) {
+      Main.getInstance().getLogger().info("Found " + mask.size() + " player claim(s)");
+    }
     event.setExtent(new WorldEditExtent(mask, event.getExtent()));
 
   }

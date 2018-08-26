@@ -34,23 +34,33 @@ public class GriefPreventionClaimApi implements ClaimApi {
   @Override
   public List<ClaimRegion> getRegions(Player player) {
 
-    Main.getInstance().getLogger().info("In GriefPreventionClaimApi.getRegions");
+    if (Main.isDebug()) {
+      Main.getInstance().getLogger().info("In GriefPreventionClaimApi.getRegions");
+    }
 
     List<ClaimRegion> returnValue = new ArrayList<>();
     ClaimManager claimManager = Main.getGriefPreventionApi().getClaimManager(player.getWorld());
     List<Claim> playerClaims = claimManager.getPlayerClaims(player.getUniqueId());
 
-    Main.getInstance().getLogger().info("Found " + playerClaims.size() + " player claims");
+    if (Main.isDebug()) {
+      Main.getInstance().getLogger().info("Found " + playerClaims.size() + " player claims");
+    }
 
     for (Claim claim : playerClaims) {
       Location lowerBoundary = claim.getLesserBoundaryCorner();
       Location greaterBoundary = claim.getGreaterBoundaryCorner();
+      if (Main.isDebug()) {
+        Main.getInstance().getLogger().info("  lowerBoundary: " + lowerBoundary.getBlockX() + "," + lowerBoundary.getBlockY() + "," + lowerBoundary.getBlockZ());
+        Main.getInstance().getLogger().info("  greaterBoundary: " + greaterBoundary.getBlockX() + "," + greaterBoundary.getBlockY() + "," + greaterBoundary.getBlockZ());
+      }
       returnValue.add(new ClaimRegion(lowerBoundary.getBlockX(), greaterBoundary.getBlockX(),
                                       lowerBoundary.getBlockY(), greaterBoundary.getBlockY(),
-                                      lowerBoundary.getBlockY(), greaterBoundary.getBlockZ()));
+                                      lowerBoundary.getBlockZ(), greaterBoundary.getBlockZ()));
     }
 
-    Main.getInstance().getLogger().info("Returning " + returnValue.size() + " player claims");
+    if (Main.isDebug()) {
+      Main.getInstance().getLogger().info("Returning " + returnValue.size() + " player claims");
+    }
 
     return returnValue;
 

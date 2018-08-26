@@ -45,16 +45,18 @@ import org.spongepowered.api.plugin.Plugin;
   description = "LimitedWorldEdit for Sponge",
   id = "limitedworldedit",
   name = "LimitedWorldEdit",
-  version = "0.5"
+  version = "0.6"
 )
 public class Main {
 
   private static final String project = "LimitedWorldEdit";
-  private static final String version = "0.5";
+  private static final String version = "0.6";
 
   private static Main instance;
   private static GriefPreventionApi griefPreventionApi;
   private static ClaimApi claimApi;
+
+  private static boolean debug = false;
 
   @Inject
   private Logger logger;
@@ -95,6 +97,10 @@ public class Main {
 
   static ClaimApi getClaimApi() {
     return claimApi;
+  }
+
+  public static boolean isDebug() {
+    return debug;
   }
 
   public static GriefPreventionApi getGriefPreventionApi() {
